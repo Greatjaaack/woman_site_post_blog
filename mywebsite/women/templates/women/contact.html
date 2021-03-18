@@ -1,0 +1,16 @@
+{% extends 'women/base.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<form method="post">
+    {% csrf_token %}
+
+    <div>{{ form.non_feild_error }}</div>
+
+    {% for f in form %}
+    <p><label for="{{ f.id_for_label }}">{{ f.label }}:</label>{{ f }}</p>
+    <dib>{{ f.errors }}</dib>
+    {% endfor %}
+<button type="submit">Отправить</button>
+</form>
+{% endblock content %}

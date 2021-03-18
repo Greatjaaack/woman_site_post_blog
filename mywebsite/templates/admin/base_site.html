@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+
+<!--содержимое этого блока позволяет подключить нам таблицу стилей-->
+<!--загружаем тэг static, для того, чтобы его использовать ниже -->
+{% load static %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'admin/admin.css' %}">
+{% endblock %}
+
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
